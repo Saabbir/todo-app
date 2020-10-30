@@ -15,7 +15,9 @@ const generateTodoDOM = todo => {
   checkboxEl.checked = todo.completed
   checkboxEl.addEventListener('change', e => {
     toggleTodo(todo.id)
-    renderTodos()
+    // renderTodos()
+
+    todoEl.classList.toggle('list-item--checked')
   })
   containerEl.appendChild(checkboxEl)
 
@@ -25,6 +27,7 @@ const generateTodoDOM = todo => {
   } else {
     textEl.textContent = 'Unnamed Todo'
   }
+  textEl.classList.add('list-item__text')
   containerEl.appendChild(textEl)
 
   // Setup container
@@ -40,6 +43,11 @@ const generateTodoDOM = todo => {
     renderTodos()
   })
   todoEl.appendChild(buttonEl)
+
+  // if todo completed, add `list-item--checked` class to todo element
+  if (todo.completed) {
+    todoEl.classList.add('list-item--checked')
+  }
 
   return todoEl
 }
