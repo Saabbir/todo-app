@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
+  "homepage": "https://saabbir.github.io/todo-app",
   "scripts": {
     "dev": "webpack-dev-server --mode development",
     "build": "webpack --mode production"
